@@ -1,0 +1,25 @@
+<!--
+  Generated template for the NetreportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>รายงานเกรดปาล์มตามลานเททั้งหมด</ion-title>
+  
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    
+  <ion-item color="primary"><h4 >รายงานเกรดปาล์มตามลานเททั้งหมด</h4></ion-item>
+  <ion-list>
+  <ion-item full><button ion-button round class="button button-dark customBtn"  color="primary" (click)="showstart()">ตั้งแต่วันที่</button> {{dateData.startdate | date:'dd-MM-yyyy'}}</ion-item>
+  <ion-item full><button ion-button round class="button button-dark customBtn" color="primary" (click)="showend()">ถึงวันที่</button> {{dateData.enddate | date:'dd-MM-yyyy'}}</ion-item>
+  <ion-item full ><ion-buttons right><button ion-button full round color="primary" (click)="openModalreport()">ตกลง</button></ion-buttons></ion-item>
+</ion-list>
+</ion-content>

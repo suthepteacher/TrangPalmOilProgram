@@ -1,0 +1,57 @@
+
+<ion-header>
+	<ion-navbar color='dark'>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>เพิ่มผู้ใช้</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item color="primary">
+        <ion-label>รายละเอียด</ion-label>
+     </ion-item>
+    <ion-item>
+        <ion-label floating>ชื่อผู้ใช้ (ภาษาอังกฤษเท่านั้น)</ion-label>
+        <ion-input type="text" [(ngModel)]="user.username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>รหัสผ่าน</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+          <ion-item floating >
+              <ion-label>การอนุญาตเข้าถึงรายงาน</ion-label>
+          </ion-item>
+          <ion-item>
+              <ion-label>Truckscale</ion-label>
+              <ion-checkbox [(ngModel)]="truckscales" (ionChange)="updateTruckscale()"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                <ion-label>Timestamp</ion-label>
+                <ion-checkbox [(ngModel)]="timestamp" (ionChange)="updateTimestamp()"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                 <ion-label>Money</ion-label>
+                 <ion-checkbox [(ngModel)]="money" (ionChange)="updateMoney()"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+                  <ion-label>Weight</ion-label>
+                  <ion-checkbox [(ngModel)]="weight" (ionChange)="updateWeight()"></ion-checkbox>
+            </ion-item>
+            <ion-item floating >
+                <ion-label>การอนุญาตให้เป็น</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Admin</ion-label>
+                <ion-checkbox [(ngModel)]="admin" (ionChange)="updateAdmin()"></ion-checkbox>
+          </ion-item>
+          <ion-item full >
+            <ion-buttons right> <button ion-button shape="round" color="primary" expand="block" (click)="register()">เพิ่มผู้ใช้</button>
+        </ion-buttons>
+        </ion-item>
+         
+        </ion-list>
+  
+</ion-content>

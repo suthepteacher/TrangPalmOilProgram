@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "name": "TruckScales",
+            "children": [
+                {
+                    "name": "รายงานเกราดปาล์มตามลานเททั้งหมด",
+                    "information": "ข้อมูลการซื้อขายปาล์มรายวัน เกรดปาล์ม จำนวนน้ำหนัก จำนวนเงิน จำนวนเงินทั้งหมด ตามลานเท ",
+                    "icon": "alarm",
+                    "component" : "TruckscalesPage" 
+                },
+                {
+                    "name": "รายงานรวมยอดปาล์มฝ่ายจัดซื้อวัตถุดิบทั้งหมด",
+                    "information": "ข้อมูลการซื้อขายปาล์มรายวัน เกรดปาล์ม จำนวนน้ำหนัก จำนวนเงิน จำนวนเงินทั้งหมด ตามลานเท.",
+                    "icon": "open",
+                    "component" : "TruckscalesPage" 
+                }
+                
+            ]
+        },
+        {
+            "name": "TimeStamp",
+            "children": [
+                {
+                    "name": "Special Academy Pizza",
+                    "information": " Landjaeger fatback shank frankfurter, tongue shoulder ham strip steak pancetta pork short loin corned beef short ribs biltong cow",
+                    "icon": "open",
+                    "component" : "TruckscalesPage" 
+                },
+                {
+                    "name": "Pizza Ionic",
+                    "information": "Pork chop pastrami landjaeger chuck brisket",
+                    "icon": "open",
+                    "component" : "TruckscalesPage" 
+                }
+            ]
+        }
+    ]
+}

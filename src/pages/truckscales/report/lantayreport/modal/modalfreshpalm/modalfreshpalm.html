@@ -1,0 +1,112 @@
+
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>รายงาน</ion-title>
+      <ion-buttons end>
+         <button ion-button icon-only (click)="closemodal()">
+          <ion-icon name="close-circle"></ion-icon>
+         </button>
+      </ion-buttons>
+      <ion-buttons left>
+        <button ion-button icon-only>
+            <ion-icon name="list-box"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content  >
+  <ion-list *ngIf="queryfinish">
+    <ion-item detail  lines="full"  color="energy" text-wrap>
+          <h2 center text-center style="font-size: 1.5rem">บริษัทตรังน้ำมันปาล์ม</h2>
+          <h2 center text-center style="font-size: 1.5rem">รวมยอดปาล์มสดฝ่ายจัดซื้อวัตถุดิบ</h2>
+          <h2 center text-center style="font-size: 1.5rem">ยอดรวมทั้งหมดระหว่างวันที่ {{dateStart | date:'dd-MM-yyyy'}} ถึงวันที่ {{dateEnd | date:'dd-MM-yyyy'}} ตามลานเท: ทั้งหมด</h2>
+    </ion-item> 
+    <ion-item detail  lines="full" color="light" *ngIf=" total_sumMoney > 0" >
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 no-padding>
+                    <b>บัญชีซื้อจำนวนเงิน</b>
+                  </ion-col>
+                  <ion-col col-6 style="text-align: left;" no-padding> 
+                      <b>รวมจำนวนเงิน</b> 
+                   </ion-col>
+                   <ion-col col-6 style="text-align: right;" no-padding> 
+                     <b>  {{total_sumMoney| number}} บาท </b> 
+                 </ion-col>
+              <ion-col col-6 style="text-align: left;" no-padding> 
+                 <b>ราคาเฉลี่ย</b> 
+              </ion-col>
+              <ion-col col-6 style="text-align: right;" no-padding> 
+                <b>  4.00 บาท </b> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-item>
+  <ion-item detail  lines="full" *ngFor="let info of responseData ">
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col col-12 no-padding>
+        <b>{{info.GoodsName}}</b>
+      </ion-col>
+      <ion-col col-6 style="text-align: left;" no-padding> 
+          จำนวนน้ำหนัก
+      </ion-col>
+      <ion-col col-6 style="text-align: right;" no-padding> 
+           {{info.AmountWeight/1000 | number:".2"}} ตัน
+    </ion-col>
+      <ion-col col-6 style="text-align: left;" no-padding> 
+          ราคาเฉลี่ย
+      </ion-col>
+      <ion-col col-6 style="text-align: right;" no-padding> 
+          {{info.AveragePrice}} บาท
+    </ion-col>  
+    <ion-col col-6 style="text-align: left;" no-padding> 
+        จำนวนเงิน
+    </ion-col>
+    <ion-col col-6 style="text-align: right;" no-padding> 
+        {{info.AmountMoney| number}} บาท 
+  </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-item>
+  <ion-item detail  lines="full" color="primary" *ngIf=" total_sumMoney > 0" >
+      <ion-grid>
+          <ion-row>
+              <ion-col col-12 no-padding>
+                  <b>รวมปาล์มสด</b>
+                </ion-col>
+                <ion-col col-6 style="text-align: left;" no-padding> 
+                    <b>รวมจำนวนน้ำหนัก </b> 
+                  </ion-col>
+          <ion-col col-6 style="text-align: right;" no-padding> 
+            <b>  {{total_sumWeight/1000 | number:".2"}} ตัน </b> 
+        </ion-col>
+         <ion-col col-6 style="text-align: left;" no-padding> 
+            <b>ราคาเฉลี่ย</b> 
+         </ion-col>
+         <ion-col col-6 style="text-align: right;" no-padding> 
+           <b>  4.00 บาท </b> 
+       </ion-col>
+       <ion-col col-6 style="text-align: left;" no-padding> 
+          <b>รวมจำนวนเงิน</b> 
+       </ion-col>
+         <ion-col col-6 style="text-align: right;" no-padding> 
+           <b>  {{total_sumMoney| number}} บาท </b> 
+       </ion-col>
+        </ion-row>
+      </ion-grid>
+      </ion-item>
+      <ion-item detail  lines="full" color="primary" *ngIf=" total_sumMoney == 0" >
+        <ion-grid>
+            <ion-row>
+              <ion-col col-6 style="text-align: left;" no-padding> 
+                 <b>ไม่มีข้อมูล....</b> 
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-item>
+  </ion-list>
+  </ion-content>
+  

@@ -1,0 +1,30 @@
+page-truckscales {
+    .tile {
+		.item {
+			padding: -5px;
+		}
+
+		.item-inner {
+			padding: -5px;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		h1 {
+			text-align: center;
+			padding-bottom: -20px;
+		}
+	}
+
+	ion-item-content {
+       
+            min-height: 3rem; /* <- this can be whatever you need */
+        
+	}
+
+}
+#welcome{
+	background: color($colors, primary);
+}
